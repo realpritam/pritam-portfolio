@@ -1,0 +1,33 @@
+---
+import Github from "../icons/Github.astro";
+import Twitter from "../icons/Twitter.astro";
+import Discord from "../icons/Discord.astro";
+import Email from "../icons/Email.astro";
+export interface Props {
+    title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<header class="flex text-white w-full pl-6 pr-6 pt-8 pb-8">
+    <div class="w-full space-x-6">
+        <a href="/" class="rounded-xl hover:underline p-2">{title}</a>
+    </div>
+    <nav class="flex items-end">
+        <div class="inline-flex h-full space-x-4 flex-auto text-2xl">
+            <a href="https://github.com/realpritam" class="transition-transform hover:scale-105" target="_blank" rel="noreferrer">
+                <Github />
+            </a>
+            <a href="https://twitter.com/Realpritam_" class="transition-transform hover:scale-105" target="_blank" rel="noreferrer">
+                <Twitter />
+            </a>
+            <a href="https://discord.gg/Ku4ty7GGyH" class="transition-transform hover:scale-105" target="_blank" rel="noreferrer">
+                <Discord />
+            </a>
+            <a href="mailto:pritamcugcvj@gmail.com" class="transition-transform hover:scale-105" target="_blank" rel="noreferrer">
+                <Email />
+            </a>
+        </div>
+    </nav>
+</header>
