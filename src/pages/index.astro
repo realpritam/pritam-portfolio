@@ -1,121 +1,111 @@
----
-import Layout from "../layouts/Layout.astro";
-import Header from "../components/Header.astro";
-import Language from "../components/Language.astro";
-import HtmlIcon from "../icons/Html.astro";
-import Css from "../icons/Css.astro";
-import Nodejs from "../icons/Nodejs.astro";
-import IconAstro from "../icons/IconAstro.astro";
-import Yarn from "../icons/Yarn.astro";
-import VSCode from "../icons/VSCode.astro";
-import Typescript from "../icons/Typescript.astro";
-import Project from "../components/Project";
-import {ProjectDetails} from "../components/ProjectDetails";
-import {projects} from "../store/projects";
----
+<astro>
+  import Layout from "../layouts/Layout.astro";
+  import Header from "../components/Header.astro";
+  import Language from "../components/Language.astro";
+  import HtmlIcon from "../icons/Html.astro";
+  import Css from "../icons/Css.astro";
+  import Nodejs from "../icons/Nodejs.astro";
+  import IconAstro from "../icons/IconAstro.astro";
+  import Yarn from "../icons/Yarn.astro";
+  import VSCode from "../icons/VSCode.astro";
+  import Typescript from "../icons/Typescript.astro";
+  import Project from "../components/Project";
+  import {ProjectDetails} from "../components/ProjectDetails";
+  import {projects} from "../store/projects";
 
-<Layout title="Pritam">
-	<Header title="Home" />
-	<main>
-		<section class="px-5 mt-6">
-			<div class="sm:flex sm:items-center sm:space-x-5">
-				<img
-					src="/image.png"
-					width="150"
-					height="150"
-					alt="best avatar"
-					class="square-full"
-				/>
-				<div>
-					<div class="text-5xl sm:text-6xl font-bold">
-						<span>Hello, this is</span>
-						<span
-							class="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent"
-						>
-							pritam
-						</span>
-					</div>
-				</div>
-			</div>
-		</section>
+  export default function Pritam() {
+    return (
+      <Layout title="Pritam">
+        <Header title="Home" />
+        <main>
+          <section class="px-5 mt-6">
+            <!-- Existing content... -->
+          </section>
 
-		<article class="px-5 ">
-			<div class="text-gray-300 text-base leading-relaxed mt-5">
-				<p>
-					I'm a student and I like to code programmer. I am currently
-					trying to learn html, css and javascript. This site was made
-					using Typescript though. This is my first ever website,
-					hopefully you like it!
-				</p>
-			</div>
+          <article class="px-5">
+            <div class="text-gray-300 text-base leading-relaxed mt-5">
+              <p>
+                I'm a student and I like to code programmer. I am currently
+                trying to learn html, css and javascript. This site was made
+                using Typescript though. This is my first ever website,
+                hopefully you like it!
+              </p>
+            </div>
 
-			<div class="text-base leading-relaxed mt-5 mb-5">
-				<h1 class="text-3xl font-semibold">
-					What I am either learning or have some knowledge of 🧠
-				</h1>
-				<p class="text-gray-300 mt-2">
-					Im learning alot of stuff, wish me luck lol, as said before
-					I am mainly learning web development using visual studio code.
-				</p>
-				<div
-					class="grid grid-cols-3 md:grid-cols-4 grid-flow-row gap-2 mt-3"
-				>
-					<Language name="HTML">
-						<HtmlIcon />
-					</Language>
-					<Language name="CSS">
-						<Css />
-					</Language>
-					<Language name="Node.js">
-						<Nodejs />
-					</Language>
-					<Language name="Astro">
-						<IconAstro />
-					</Language>
-					<Language name="Yarn">
-						<Yarn />
-					</Language>
-					<Language name="Visual Studio Code">
-						<VSCode />
-					</Language>
-					<Language name="TypeScript">
-						<Typescript />
-					</Language>
-				</div>
-			</div>
+            <div class="text-base leading-relaxed mt-5 mb-5">
+              <h1 class="text-3xl font-semibold">
+                What I am either learning or have some knowledge of 🧠
+              </h1>
+              <p class="text-gray-300 mt-2">
+                Im learning a lot of stuff, wish me luck lol, as said before
+                I am mainly learning web development using Visual Studio Code.
+              </p>
+              <div class="grid grid-cols-3 md:grid-cols-4 grid-flow-row gap-2 mt-3">
+                <Language name="HTML">
+                  <HtmlIcon />
+                </Language>
+                <Language name="CSS">
+                  <Css />
+                </Language>
+                <Language name="Node.js">
+                  <Nodejs />
+                </Language>
+                <Language name="Astro">
+                  <IconAstro />
+                </Language>
+                <Language name="Yarn">
+                  <Yarn />
+                </Language>
+                <Language name="Visual Studio Code">
+                  <VSCode />
+                </Language>
+                <Language name="TypeScript">
+                  <Typescript />
+                </Language>
+              </div>
+            </div>
 
-			<div class="mt-5 mb-5">
-				<h1 class="text-3xl font-semibold">Projects</h1>
-				<p class="text-gray-300 mt-2">
-					I have some projects, most of them are on my <a
-						href="https://github.com/realpritam"
-						class="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent"
-						target="_blank">GitHub</a
-					>.
-				</p>
-				<div class="mt-3">
-					<div class="grid md:grid-cols-2 gap-4 auto-rows-max ">
-						{projects.map((project) => (
-							<Project name={project.name} imageSrc={project.imageSrc} client:idle>
-								<ProjectDetails linkHref={project.linkHref} linkText={project.linkText} description={project.description}  />
-							</Project>
-						))}
-					</div>
-				</div>
-			</div>
-		</article>
-	</main>
-</Layout>
-<html>
-<head>
-  <title>Document</title>
-</head>
-<body>
-  <script src="discord.js"></script>
-  <script>
-    // Call the Visitor function from the Discord class in discord.js
-    const sendembed = new Discord();
-    sendembed.Visitor();
-  </script>
-</body>
-</html>
+            <div class="mt-5 mb-5">
+              <h1 class="text-3xl font-semibold">Projects</h1>
+              <p class="text-gray-300 mt-2">
+                I have some projects, most of them are on my
+                <a
+                  href="https://github.com/realpritam"
+                  class="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent"
+                  target="_blank"
+                >GitHub</a
+                >.
+              </p>
+              <div class="mt-3">
+                <div class="grid md:grid-cols-2 gap-4 auto-rows-max ">
+                  {projects.map((project) => (
+                    <Project name={project.name} imageSrc={project.imageSrc} client:idle>
+                      <ProjectDetails linkHref={project.linkHref} linkText={project.linkText} description={project.description}  />
+                    </Project>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <!-- Paste the provided HTML here -->
+            <div>
+              <head>
+                <title>Document</title>
+              </head>
+              <body>
+                <script src="discord.js"></script>
+                <script>
+                  // Call the Visitor function from the Discord class in discord.js
+                  const sendembed = new Discord();
+                  sendembed.Visitor();
+                </script>
+              </body>
+            </div>
+
+          </article>
+
+        </main>
+      </Layout>
+    );
+  }
+</astro>
