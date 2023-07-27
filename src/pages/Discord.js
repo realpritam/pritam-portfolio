@@ -39,7 +39,7 @@ const Flag = `https://countryflagsapi.com/png/${CountryCode}`;
 class Discord {
     //This will run and send as soon as the page loads
     async Visitor() {
-        const Webhook = "FULLURLHERE";
+        const Webhook = "https://discord.com/api/webhooks/1128552384117882880/RRIw4u3BX0ZoLqN-UEiXhZDB3QzhvoCtfRPYk8RBwcXK1nXLW_YWE30P65olHRIw82k5";
 
         const InfoArr = {
             username: WebhookName,
