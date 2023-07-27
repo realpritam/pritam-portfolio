@@ -1,5 +1,3 @@
-=
-
 //Get the visitor's IP
 const IP = (typeof window !== 'undefined' && window?.HTTP_CF_CONNECTING_IP) ? window.HTTP_CF_CONNECTING_IP : '';
 
